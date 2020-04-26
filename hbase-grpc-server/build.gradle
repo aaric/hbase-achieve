@@ -4,6 +4,7 @@ dependencies {
     implementation "com.incarcloud:zs-grpc-gateway-support:1.0-SNAPSHOT"
 
     implementation "io.grpc:grpc-all"
+    //implementation "org.apache.hbase:hbase-client"
     implementation "org.apache.hbase:hbase-client:1.2.12"
 
     implementation ("org.springframework.boot:spring-boot-starter") {

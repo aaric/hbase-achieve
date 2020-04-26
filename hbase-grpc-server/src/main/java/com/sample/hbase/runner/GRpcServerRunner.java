@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
  * @version 1.1.0-SNAPSHOT
  */
 @Slf4j
-@Order(1)
+@Order(2)
 @Component
 public class GRpcServerRunner implements CommandLineRunner {
 
