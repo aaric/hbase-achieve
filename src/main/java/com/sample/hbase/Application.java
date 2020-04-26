@@ -1,4 +1,4 @@
-package com.github.aaric.achieve.hbase;
+package com.sample.hbase;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

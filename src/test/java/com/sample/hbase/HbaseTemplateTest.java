@@ -1,4 +1,4 @@
-package com.github.aaric.achieve.hbase;
+package com.sample.hbase;
 
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.TableName;
