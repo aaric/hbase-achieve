@@ -1,4 +1,4 @@
 rootProject.name = "hbase-achieve"
 
-include "hbase-grpc-server"
+include "hbase-client"
 include "hbase-samples"
