@@ -1,6 +1,7 @@
 package com.sample.hbase.util;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * HbaseUtils测试类
@@ -11,6 +12,7 @@ import org.junit.Test;
 public class HbaseUtilsTest {
 
     @Test
+    @Disabled
     public void testGeneratePrimaryKey() throws Exception {
         System.out.println(HbaseUtils.generatePrimaryKey(12345));
     }
