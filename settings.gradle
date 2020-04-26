@@ -1,2 +1,4 @@
-rootProject.name = 'hbase-achieve'
+rootProject.name = "hbase-achieve"
 
+include "hbase-grpc-server"
+include "hbase-samples"

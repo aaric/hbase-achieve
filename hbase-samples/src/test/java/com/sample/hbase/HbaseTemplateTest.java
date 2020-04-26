@@ -8,13 +8,14 @@ import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.filter.*;
 import org.apache.hadoop.hbase.util.Bytes;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.hadoop.hbase.HbaseTemplate;
 import org.springframework.data.hadoop.hbase.RowMapper;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,14 +26,15 @@ import java.util.List;
  * @author Aaric, created on 2017-05-24T17:32.
  * @since 1.0-SNAPSHOT
  */
-@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
+@ExtendWith(SpringExtension.class)
 public class HbaseTemplateTest {
 
     @Autowired
     protected HbaseTemplate hbaseTemplate;
 
     @Test
+    @Disabled
     public void testPrint() throws Exception {
         System.out.println(hbaseTemplate.getConfiguration().get("hbase.master"));
         System.out.println(hbaseTemplate.getConfiguration().get("hbase.zookeeper.quorum"));
@@ -40,12 +42,14 @@ public class HbaseTemplateTest {
     }
 
     @Test
+    @Disabled
     public void testTableExists() throws Exception {
         Admin admin = ConnectionFactory.createConnection(hbaseTemplate.getConfiguration()).getAdmin();
         System.out.println(admin.tableExists(TableName.valueOf("merchant")));
     }
 
     @Test
+    @Disabled
     public void testQuery() throws Exception {
         System.out.println(hbaseTemplate);
         List<String> dataList = hbaseTemplate.find("merchant", "base", new RowMapper<String>() {
@@ -58,6 +62,7 @@ public class HbaseTemplateTest {
     }
 
     @Test
+    @Disabled
     public void testFilter() throws Exception {
         Scan scan = new Scan();
 //		Scan scan = new Scan(Bytes.toBytes("company_rk_gp1_001"), Bytes.toBytes("company_rk_gp1_004"));

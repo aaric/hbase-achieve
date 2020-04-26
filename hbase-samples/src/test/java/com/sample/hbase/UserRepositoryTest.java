@@ -1,11 +1,12 @@
 package com.sample.hbase;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.text.MessageFormat;
 import java.util.List;
@@ -16,8 +17,8 @@ import java.util.List;
  * @author Aaric, created on 2017-05-25T10:07.
  * @since 1.0-SNAPSHOT
  */
-@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
+@ExtendWith(SpringExtension.class)
 public class UserRepositoryTest {
 
     @Autowired
@@ -27,24 +28,28 @@ public class UserRepositoryTest {
     protected UserRepository userRepository;
 
     @Test
+    @Disabled
     public void testCreateTable() throws Exception {
         userUtils.initialize();
     }
 
     @Test
+    @Disabled
     public void testFindAll() throws Exception {
         List<User> userList = userRepository.findAll();
-        for(User user: userList) {
+        for (User user : userList) {
             System.out.println(user);
         }
     }
 
     @Test
+    @Disabled
     public void testGet() throws Exception {
         System.out.println(userRepository.get(1));
     }
 
     @Test
+    @Disabled
     public void testSave() throws Exception {
         String email;
         String password;
@@ -56,17 +61,20 @@ public class UserRepositoryTest {
     }
 
     @Test
+    @Disabled
     public void testDelete() throws Exception {
         userRepository.delete(10);
     }
 
     @Test
+    @Disabled
     public void testCount() throws Exception {
         // 100000(9708ms)
         System.out.println(userRepository.count());
     }
 
     @Test
+    @Disabled
     public void testCount2() throws Exception {
         // 100000(646ms)
         System.out.println(userRepository.count2());
