@@ -1,4 +1,4 @@
-package com.github.aaric.achieve.hbase;
+package com.sample.hbase;
 
 import org.apache.hadoop.hbase.HColumnDescriptor;
 import org.apache.hadoop.hbase.HTableDescriptor;

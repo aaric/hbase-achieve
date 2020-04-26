@@ -1,6 +1,6 @@
-package com.github.aaric.achieve.hbase;
+package com.sample.hbase;
 
-import com.github.aaric.achieve.hbase.util.HbaseUtils;
+import com.sample.hbase.util.HbaseUtils;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.client.coprocessor.AggregationClient;

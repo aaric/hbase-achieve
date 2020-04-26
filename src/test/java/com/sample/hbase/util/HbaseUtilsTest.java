@@ -1,4 +1,4 @@
-package com.github.aaric.achieve.hbase.util;
+package com.sample.hbase.util;
 
 import org.junit.Test;
 

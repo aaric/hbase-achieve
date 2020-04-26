@@ -1,4 +1,4 @@
-package com.github.aaric.achieve.hbase.util;
+package com.sample.hbase.util;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hbase.client.Put;
