@@ -23,7 +23,7 @@ public class GRpcServerRunner implements CommandLineRunner {
     /**
      * 暴露服务端口
      */
-    private int serverPort = 12345;
+    private int serverPort = 40020;
 
     /**
      * 网关发送命令服务

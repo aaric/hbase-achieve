@@ -39,6 +39,6 @@ public class HBaseClientRunner implements CommandLineRunner {
         table.put(put);
 
         // 打印日志
-        log.debug("rowKey: {}", rowKey);
+        log.info("save rowKey: {}", rowKey);
     }
 }
