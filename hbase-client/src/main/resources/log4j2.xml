@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration status="WARN" monitorInterval="30">
     <Properties>
         <Property name="project.name">output</Property>
         <Property name="log.charset">utf-8</Property>
@@ -10,17 +10,22 @@
             <PatternLayout pattern="${log.pattern}" charset="${log.charset}"/>
         </Console>
         <RollingFile name="ROLLING_FILE" fileName="${project.name}.log"
-                     filePattern="$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.gz">
+                     filePattern="$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd_HH:}-%i.log.gz">
             <PatternLayout pattern="${log.pattern}" charset="${log.charset}"/>
-            <Filters>
+            <!--<Filters>
                 <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL"/>
                 <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
-            </Filters>
+            </Filters>-->
             <Policies>
-                <TimeBasedTriggeringPolicy/>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
                 <SizeBasedTriggeringPolicy size="500MB"/>
             </Policies>
-            <DefaultRolloverStrategy max="50"/>
+            <DefaultRolloverStrategy>
+                <Delete basePath="$${date:yyyy-MM}" maxDepth="2" followLinks="true">
+                    <IfFileName glob="${project.name}-*.log.gz"/>
+                    <IfLastModified age="30d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
         </RollingFile>
     </Appenders>
     <Loggers>
