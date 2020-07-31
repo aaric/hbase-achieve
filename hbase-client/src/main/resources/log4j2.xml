@@ -23,7 +23,7 @@
             <DefaultRolloverStrategy>
                 <Delete basePath="$${date:yyyy-MM}" maxDepth="1" followLinks="true">
                     <IfFileName glob="${project.name}-*.log.gz"/>
-                    <IfLastModified age="1d"/>
+                    <IfLastModified age="30d"/>
                 </Delete>
             </DefaultRolloverStrategy>
         </RollingRandomAccessFile>
