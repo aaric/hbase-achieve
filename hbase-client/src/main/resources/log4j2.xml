@@ -17,14 +17,13 @@
                 <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
             </Filters>
             <Policies>
-                <!--<TimeBasedTriggeringPolicy interval="1" modulate="true"/>-->
-                <!--<SizeBasedTriggeringPolicy size="500MB"/>-->
-                <SizeBasedTriggeringPolicy size="2MB"/>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="500MB"/>
             </Policies>
             <DefaultRolloverStrategy>
-                <Delete basePath="$${date:yyyy-MM}" maxDepth="2" followLinks="true">
+                <Delete basePath="$${date:yyyy-MM}" maxDepth="1" followLinks="true">
                     <IfFileName glob="${project.name}-*.log.gz"/>
-                    <IfLastModified age="30d"/>
+                    <IfLastModified age="1d"/>
                 </Delete>
             </DefaultRolloverStrategy>
         </RollingRandomAccessFile>

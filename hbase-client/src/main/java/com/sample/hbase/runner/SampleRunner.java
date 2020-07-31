@@ -46,5 +46,14 @@ public class SampleRunner implements CommandLineRunner {
         }
 
         log.info("save rowKey: {}", rowKey);
+
+        // Test Log4j2
+        /*for (int i = 0; i < 100000; i++) {
+            log.trace("{} - TRACE TRACE TRACE TRACE TRACE TRACE TRACE TRACE TRACE TRACE", i +1 );
+            log.debug("{} - DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG DEBUG", i +1 );
+            log.info("{} - INFO INFO INFO INFO INFO INFO INFO INFO INFO INFO", i +1 );
+            log.warn("{} - WARN WARN WARN WARN WARN WARN WARN WARN WARN WARN", i +1 );
+            log.error("{} - ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR", i +1 );
+        }*/
     }
 }
