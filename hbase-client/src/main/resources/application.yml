@@ -1,0 +1,26 @@
+# Tomcat settings
+server:
+  port: ${TOMCAT_SERVER_PORT:8081}
+
+# Management settings
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# Spring settings
+spring:
+  profiles:
+    active: dev
+  application:
+    name: hbase-client
+
+# HBase settings
+hbase:
+  zookeeper:
+    quorum: ${HBASE_ZOOKEEPER_QUORUM:10.0.11.33,10.0.11.34,10.0.11.35}
+    property:
+      clientPort: ${HBASE_ZOOKEEPER_CLIENT_PORT:2181}
+  table:
+    test: test
