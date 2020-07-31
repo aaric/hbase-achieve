@@ -82,5 +82,15 @@ subprojects {
         }
     }
 
+    task removeOutputLog() {
+        def subProjectPath = project.projectDir
+        if (null != subProjectPath) {
+            def logPath = new File(subProjectPath, "output.log")
+            if (logPath.exists()) {
+                logPath.delete()
+            }
+        }
+    }
+
     defaultTasks "assemble"
 }
