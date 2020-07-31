@@ -2,7 +2,6 @@ package com.sample.hbase;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ImportResource;
 
 /**
  * Spring Boot Launcher.
@@ -11,7 +10,7 @@ import org.springframework.context.annotation.ImportResource;
  * @since 1.0-SNAPSHOT
  */
 @SpringBootApplication
-@ImportResource(locations = "classpath:spring-hbase.xml")
+//@ImportResource(locations = "classpath:spring-hbase.xml")
 public class Application {
 
     public static void main(String[] args) {
