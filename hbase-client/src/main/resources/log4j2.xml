@@ -30,7 +30,7 @@
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
-        <Logger name="com.sample" level="DEBUG"/>
+        <Logger name="com.sample" level="INFO"/>
         <Root level="WARN">
             <AppenderRef ref="CONSOLE"/>
             <AppenderRef ref="ROLLING_FILE"/>
