@@ -20,7 +20,7 @@
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
                 <SizeBasedTriggeringPolicy size="500MB"/>
             </Policies>
-            <DefaultRolloverStrategy>
+            <DefaultRolloverStrategy max="50">
                 <Delete basePath="$${date:yyyy-MM}" maxDepth="1" followLinks="true">
                     <IfFileName glob="${project.name}-*.log.gz"/>
                     <IfLastModified age="30d"/>
