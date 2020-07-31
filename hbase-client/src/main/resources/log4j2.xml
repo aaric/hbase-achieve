@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN" monitorInterval="30">
+<Configuration status="WARN">
     <Properties>
         <Property name="project.name">output</Property>
         <Property name="log.charset">utf-8</Property>
@@ -9,16 +9,17 @@
         <Console name="CONSOLE" target="SYSTEM_OUT">
             <PatternLayout pattern="${log.pattern}" charset="${log.charset}"/>
         </Console>
-        <RollingFile name="ROLLING_FILE" fileName="${project.name}.log"
-                     filePattern="$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd_HH:}-%i.log.gz">
+        <RollingRandomAccessFile name="ROLLING_FILE" fileName="${project.name}.log"
+                     filePattern="$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd_HH}-%i.log.gz">
             <PatternLayout pattern="${log.pattern}" charset="${log.charset}"/>
-            <!--<Filters>
+            <Filters>
                 <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL"/>
-                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
-            </Filters>-->
+                <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
             <Policies>
-                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
-                <SizeBasedTriggeringPolicy size="500MB"/>
+                <!--<TimeBasedTriggeringPolicy interval="1" modulate="true"/>-->
+                <!--<SizeBasedTriggeringPolicy size="500MB"/>-->
+                <SizeBasedTriggeringPolicy size="2MB"/>
             </Policies>
             <DefaultRolloverStrategy>
                 <Delete basePath="$${date:yyyy-MM}" maxDepth="2" followLinks="true">
@@ -26,7 +27,7 @@
                     <IfLastModified age="30d"/>
                 </Delete>
             </DefaultRolloverStrategy>
-        </RollingFile>
+        </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
         <Logger name="com.sample" level="DEBUG"/>
